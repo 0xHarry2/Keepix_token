@@ -1,0 +1,439 @@
+{
+    "bitcoin": {
+        "nativeCoinName": "BTC",
+        "name": "Bitcoin",
+        "type": "bitcoin",
+        "icon": "logos:bitcoin",
+        "getBalanceByQuery": {
+            "url": "https://blockchain.info/balance?active=$address",
+            "method": "GET",
+            "body": {
+                "example": "of body for POST cases $address"
+            },
+            "resultEval": "result['$address'].final_balance"
+        },
+        "getPriceByPoolBalance": {
+            "tokenA": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+            "tokenB": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "tokenADecimals": 8,
+            "tokenBDecimals": 18,
+            "poolAddress": "0xceff51756c56ceffca006cd410b03ffc46dd3a58",
+            "blockchain": "ethereum",
+            "mulBy": "ETH"
+        }
+    },
+    "ethereum": {
+        "nativeCoinName": "ETH",
+        "name": "Ethereum",
+        "type": "evm",
+        "icon": "./icons/ETH.png",
+        "rpcs": [
+            {
+                "url": "https://mainnet.infura.io/v3/00e69497300347a38e75c3287621cb16",
+                "chainId": 1
+            }
+        ],
+        "getPriceByPoolBalance": {
+            "tokenA": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "tokenB": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "tokenADecimals": 18,
+            "tokenBDecimals": 18,
+            "poolAddress": "0xA478c2975Ab1Ea89e8196811F51A7B7Ade33eB11",
+            "blockchain": "ethereum"
+        }
+    },
+    "ethereum-holesky": {
+        "nativeCoinName": "ETH",
+        "name": "Holesky (Testnet Ethereum)",
+        "type": "evm",
+        "icon": "./icons/ETH.png",
+        "rpcs": [
+            {
+                "url": "https://ethereum-holesky.publicnode.com",
+                "chainId": 17000
+            },
+            {
+                "url": "https://1rpc.io/holesky",
+                "chainId": 17000
+            }
+        ]
+    },
+    "bsc": {
+        "nativeCoinName": "BNB",
+        "name": "Binance Smart Chain",
+        "type": "evm",
+        "icon": "mingcute:binance-coin-bnb-fill",
+        "rpcs": [
+            {
+                "url": "https://bsc-dataseed1.ninicoin.io",
+                "chainId": 56
+            }
+        ],
+        "getPriceByPoolBalance": {
+            "tokenA": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            "tokenB": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+            "tokenADecimals": 18,
+            "tokenBDecimals": 18,
+            "poolAddress": "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16",
+            "blockchain": "bsc"
+        }
+    },
+    "avalanche": {
+        "nativeCoinName": "AVAX",
+        "name": "Avalanche",
+        "type": "evm",
+        "icon": "cryptocurrency-color:avax",
+        "rpcs": [
+            {
+                "url": "https://avalanche-mainnet.infura.io/v3/00e69497300347a38e75c3287621cb16",
+                "chainId": 43114
+            }
+        ],
+        "getPriceByPoolBalance": {
+            "tokenA": "0x1ce0c2827e2ef14d5c4f29a091d735a204794041",
+            "tokenB": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            "tokenADecimals": 18,
+            "tokenBDecimals": 18,
+            "poolAddress": "0x151268db1579ebc5306d4aaa5dcc627646e6986f",
+            "blockchain": "bsc",
+            "mulBy": "BNB"
+        }
+    },
+    "arbitrum": {
+        "nativeCoinName": "ETH",
+        "name": "Arbitrum",
+        "type": "evm",
+        "icon": "./icons/ARB.png",
+        "rpcs": [
+            {
+                "url": "https://arbitrum-mainnet.infura.io/v3/00e69497300347a38e75c3287621cb16",
+                "chainId": 42161
+            }
+        ],
+        "getPriceByPoolBalance": {
+            "using": "ETH"
+        }
+    },
+    "polygon": {
+        "nativeCoinName": "MATIC",
+        "name": "Polygon",
+        "type": "evm",
+        "icon": "cryptocurrency-color:matic",
+        "rpcs": [
+            {
+                "url": "https://rpc-mainnet.maticvigil.com/",
+                "chainId": 137
+            }
+        ],
+        "getPriceByPoolUniswapV3": {
+            "tokenA": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+            "tokenB": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "tokenADecimals": 18,
+            "tokenBDecimals": 18,
+            "poolAddress": "0x290a6a7460b308ee3f19023d2d00de604bcf5b42",
+            "blockchain": "ethereum",
+            "mulBy": "ETH"
+        }
+    },
+    "tezos": {
+        "nativeCoinName": "XTZ",
+        "name": "Tezos",
+        "type": "tezos",
+        "icon": "./icons/XTZ.png",
+        "rpcs": [
+            {
+                "url": "https://mainnet.ecadinfra.com"
+            },
+            {
+                "url": "https://mainnet.smartpy.io"
+            },
+            {
+                "url": "https://rpc.tzbeta.net"
+            }
+        ],
+        "getPriceByPoolUniswapV3": {
+            "tokenA": "0x16939ef78684453bfdfb47825f8a5f714f12623a",
+            "tokenB": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            "tokenADecimals": 18,
+            "tokenBDecimals": 18,
+            "poolAddress": "0x42ead00e69394ffbb2985c1ea4fbb32aa07f6243",
+            "blockchain": "bsc",
+            "mulBy": "BNB"
+        }
+    },
+    "optimism": {
+        "nativeCoinName": "ETH",
+        "name": "Optimism",
+        "type": "evm",
+        "icon": "./icons/optimism.png",
+        "rpcs": [
+            {
+                "url": "https://mainnet.optimism.io",
+                "chainId": 10
+            }
+        ],
+        "explorer": "https://optimistic.etherscan.io",
+        "getPriceByPoolBalance": {
+            "using": "ETH"
+        }
+    },
+    "ethereum-pow": {
+        "nativeCoinName": "ETHW",
+        "name": "Ethereum POW",
+        "type": "evm",
+        "icon": "./icons/ETHW.png",
+        "rpcs": [
+            {
+                "url": "https://mainnet.ethereumpow.org",
+                "chainId": 10001
+            }
+        ]
+    },
+    "gnosis": {
+        "nativeCoinName": "XDAI",
+        "name": "Optimism",
+        "type": "evm",
+        "icon": "./icons/gnosis.png",
+        "rpcs": [
+            {
+                "url": "https://rpc.gnosischain.com",
+                "chainId": 100
+            }
+        ]
+    },
+    "graphlinq": {
+        "nativeCoinName": "GLQ",
+        "name": "Graphlinq",
+        "type": "evm",
+        "icon": "./icons/GLQ.png",
+        "rpcs": [
+            {
+                "url": "https://glq-dataseed.graphlinq.io",
+                "chainId": 614
+            }
+        ],
+        "getPriceByPoolUniswapV3": {
+            "tokenA": "0x9f9c8ec3534c3ce16f928381372bfbfbfb9f4d24",
+            "tokenB": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+            "tokenADecimals": 18,
+            "tokenBDecimals": 18,
+            "poolAddress": "0xc3881fbb90daf3066da30016d578ed024027317c",
+            "blockchain": "ethereum",
+            "mulBy": "ETH"
+        }
+    },
+    "bitcoin-cash": {
+        "nativeCoinName": "BCH",
+        "name": "Bitcoin Cash",
+        "type": "bitcoin",
+        "icon": "./icons/BCH.png",
+        "getBalanceByQuery": {
+            "url": "https://bch-chain.api.btc.com/v3/address/$address",
+            "method": "GET",
+            "resultEval": "result.data.balance"
+        },
+        "getPriceByPoolUniswapV3": {
+            "tokenA": "0x8ff795a6f4d97e7887c79bea79aba5cc76444adf",
+            "tokenB": "0x55d398326f99059ff775485246999027b3197955",
+            "tokenADecimals": 18,
+            "tokenBDecimals": 18,
+            "poolAddress": "0x1fd22fa7274bafebdfb1881321709f1219744829",
+            "blockchain": "bsc"
+        }
+    },
+    "cosmos": {
+        "nativeCoinName": "ATOM",
+        "name": "Cosmos",
+        "type": "cosmos",
+        "icon": "./icons/ATOM.png",
+        "rpcs": [
+            {
+                "url": "https://cosmos-rpc.publicnode.com:443"
+            }
+        ],
+        "getPriceByPoolBalance": {
+            "tokenA": "0x0eb3a705fc54725037cc9e008bdede697f62f335",
+            "tokenB": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            "tokenADecimals": 18,
+            "tokenBDecimals": 18,
+            "poolAddress": "0x5a36e9659f94f27e4526ddf6dd8f0c3b3386d7f3",
+            "blockchain": "bsc",
+            "mulBy": "BNB"
+        }
+    },
+    "chiliz": {
+        "nativeCoinName": "CHZ",
+        "name": "Chiliz",
+        "type": "evm",
+        "icon": "./icons/CHZ.png",
+        "rpcs": [
+            {
+                "url": "https://rpc.ankr.com/chiliz",
+                "chainId": 88888
+            },
+            {
+                "url": "https://chiliz.publicnode.com",
+                "chainId": 88888
+            }
+        ],
+        "explorer": "https://chiliscan.com",
+        "getPriceByPoolUniswapV3": {
+            "tokenA": "0x3506424f91fd33084466f402d5d97f05f8e3b4af",
+            "tokenB": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+            "tokenADecimals": 18,
+            "tokenBDecimals": 6,
+            "poolAddress": "0xb0f4a77bde7fee134265307c5cc19abff0ba409b",
+            "blockchain": "ethereum"
+        }
+    },
+    "base": {
+        "nativeCoinName": "ETH",
+        "name": "Base",
+        "type": "evm",
+        "icon": "./icons/base.png",
+        "rpcs": [
+            {
+                "url": "https://1rpc.io/base",
+                "chainId": 8453
+            },
+            {
+                "url": "https://base.publicnode.com",
+                "chainId": 8453
+            }
+        ],
+        "explorer": "https://basescan.org",
+        "getPriceByPoolBalance": {
+            "using": "ETH"
+        }
+    },
+    "massa": {
+        "nativeCoinName": "MASSA",
+        "name": "Massa",
+        "type": "massa",
+        "icon": "./icons/MASSA.png",
+        "rpcs": [
+            {
+                "url": "https://massa.net/api/v2"
+            }
+        ]
+    },
+    "massa-testnet": {
+        "nativeCoinName": "MASSA",
+        "name": "Massa Testnet",
+        "type": "massa",
+        "icon": "./icons/MASSA.png",
+        "rpcs": [
+            {
+                "url": "https://test.massa.net/api/v2"
+            }
+        ]
+    },
+    "massa-buildnet": {
+        "nativeCoinName": "MASSA",
+        "name": "Massa Buildnet",
+        "type": "massa",
+        "icon": "./icons/MASSA.png",
+        "rpcs": [
+            {
+                "url": "https://buildnet.massa.net/api/v2"
+            }
+        ]
+    },
+    "xrp": {
+        "nativeCoinName": "XRP",
+        "name": "Xrp",
+        "type": "xrp",
+        "icon": "./icons/XRP.png",
+        "rpcs": [
+            {
+                "url": "wss://xrplcluster.com/"
+            },
+            {
+                "url": "wss://s1.ripple.com/"
+            },
+            {
+                "url": "wss://s2.ripple.com/"
+            }
+        ]
+    },
+    "koinos": {
+        "nativeCoinName": "KOIN",
+        "name": "Koinos",
+        "type": "koinos",
+        "icon": "./icons/KOIN.png",
+        "rpcs": [
+            {
+                "url": "http://api.koinos.io:8080",
+                "chainId": "EiBZK_GGVP0H_fXVAM3j6EAuz3-B-l3ejxRSewi7qIBfSA=="
+            }
+        ],
+        "explorer": "https://koiner.app/"
+    },
+    "koinos-harbinger": {
+        "nativeCoinName": "KOIN",
+        "name": "Koinos Harbinger (Testnet)",
+        "type": "koinos",
+        "icon": "./icons/KOIN.png",
+        "rpcs": [
+            {
+                "url": "https://harbinger-api.koinos.io",
+                "chainId": "EiBncD4pKRIQWco_WRqo5Q-xnXR7JuO3PtZv983mKdKHSQ=="
+            },
+            {
+                "url": "https://testnet.koinosblocks.com",
+                "chainId": "EiBncD4pKRIQWco_WRqo5Q-xnXR7JuO3PtZv983mKdKHSQ=="
+            }
+        ]
+    },
+    "near": {
+        "nativeCoinName": "NEAR",
+        "name": "NEAR",
+        "type": "near",
+        "icon": "./icons/NEAR.png",
+        "rpcs": [
+            {
+                "url": "https://rpc.mainnet.near.org"
+            }
+        ],
+        "explorer": "https://nearblocks.io/"
+    },
+    "solana": {
+        "nativeCoinName": "SOL",
+        "name": "Solana",
+        "type": "solana",
+        "icon": "formkit:solana",
+        "rpcs": [
+            {
+                "url": "https://api.mainnet-beta.solana.com"
+            },
+            {
+                "url": "https://solana.api.onfinality.io/public" 
+            }
+        ],
+        "explorer": "https://explorer.solana.com/"
+    },
+    "aptos": {
+        "nativeCoinName": "APT",
+        "name": "Aptos",
+        "type": "aptos",
+        "icon": "./icons/APT.png",
+        "rpcs": [
+            {
+                "url": "https://fullnode.mainnet.aptoslabs.com/v1"
+            }
+        ],
+        "explorer": "https://explorer.aptoslabs.com/?network=mainnet"
+    },
+    "algo": {
+        "nativeCoinName": "ALGO",
+        "name": "Algorand",
+        "type": "algo",
+        "icon": "./icons/ALGO.png",
+        "rpcs": [
+            {
+                "url": "https://mainnet-api.algonode.cloud"
+            }
+        ],
+        "explorer": "https://algoexplorer.io/"
+    }
+}
